@@ -37,7 +37,6 @@ Supportive Learning Environment: Focus rooms/study pods create a supportive lear
 
 <h2>Features:</h2>
 
-Features:
 Virtual Study Pods: Dedicated virtual spaces where students can collaborate, discuss, and work together on academic projects and assignments.
 
 Group Chat and Messaging: Built-in chat functionality within study pods for real-time communication, sharing resources, and discussing ideas.
