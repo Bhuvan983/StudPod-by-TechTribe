@@ -9,4 +9,5 @@ Shreya Dhannarapu- VU21CSEN0100144
 </b><br>
 
 <h2>We have deployed the solution of our hackathon at:
-https://bhuvan983.github.io/ScholarBridge-by-TechTribe/
+
+<h3>Name of the project: StudPod</h3>
