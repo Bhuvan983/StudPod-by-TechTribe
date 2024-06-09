@@ -59,4 +59,4 @@ Screen Recording: The ability to record screen activities within study pods for 
 
 Live Screen Sharing: Interactive screen sharing feature within study pods for live presentations, group discussions, and collaborative problem-solving sessions.
 
-Thankyou
+
