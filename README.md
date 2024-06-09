@@ -58,3 +58,5 @@ Quizzes and Assessments: Creation and administration of quizzes and assessments 
 Screen Recording: The ability to record screen activities within study pods for demonstrating concepts, explaining solutions, and presenting projects in real-time.
 
 Live Screen Sharing: Interactive screen sharing feature within study pods for live presentations, group discussions, and collaborative problem-solving sessions.
+
+Thankyou
