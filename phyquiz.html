@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHYSICS PRATICE TEST</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel = "stylesheet" href = "quiz.css"> -->
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --light-purple-color: #47edc7;
+    --light-color: rgb(255,255,255,0.8);
+    --dark-color: #000;
+    --grey-color: #02edfe;
+    --transition: all 300ms ease-in-out;
+    color: #000;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    width:100%;
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-color);
+    background: var(--grey-color);
+    background-image: url('https://cdn.dribbble.com/users/267530/screenshots/3140358/media/292e06fdc9ecbda18de3c6b1b12d47b1.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wrapper{
+    background: var(--light-color);
+    padding: 1.5rem 4rem 3rem 4rem;
+    width: 60%;
+    height: 800%;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%), 0 1px 3px rgb(0 0 0 / 10%);
+  
+}
+.quiz-title{
+    text-align: center;
+    font-size: 2rem;
+}
+.quiz-score{
+    text-align: right;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border: 5px solid var(--grey-color);
+    font-weight: bold;
+    width: 100px;
+    height: 50px;
+    margin: .5rem auto 1rem auto;
+    color: var(--light-purple-color);
+}
+.quiz-question{
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+}
+.quiz-question .category{
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: var(--light-purple-color);
+    color: var(--light-color);
+    padding: .2rem .4rem;
+    border-radius: .2rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+.quiz-options{
+    list-style-type: none;
+    margin: 1rem 0;
+}
+.quiz-options li{
+    border-radius: 0.5rem;
+    font-weight: 600;
+    margin: .7rem 0;
+    padding: .4rem 1.2rem;
+    cursor: pointer;
+    border: 3px solid var(--light-purple-color);
+    background-color: var(--light-purple-color);
+    color: var(--light-color);
+    box-shadow: 0 4px 0 0 #8213f8;
+    transition: var(--transition);
+}
+.quiz-options li:hover{
+    background-color: var(--grey-color);
+    color: var(--dark-color);
+    border-color: var(--grey-color);
+    box-shadow: 0 4px 0 0 #bbbbbb;
+}
+.quiz-options li:active{
+    transform: scale(0.97);
+}
+/* js related */
+.selected{
+    background-color: var(--grey-color)!important;
+    color: var(--dark-color)!important;
+    border-color: var(--grey-color)!important;
+    box-shadow: 0 4px 0 0 #bbbbbb!important;
+}
+.quiz-foot button{
+    border: none;
+    border-radius: 0.5rem;
+    outline: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: .5rem 1rem;    
+    margin: 0 auto 0 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: block;
+    background-color: var(--grey-color);
+    color: var(--dark-color);
+    letter-spacing: 2px;
+    transition: var(--transition);
+    box-shadow: 0 4px 0 0 #bbbbbb;
+}
+.quiz-foot button:hover{
+    background-color: #e6e6e6;
+    box-shadow: 0 4px 0 0 #a7a7a7;
+}
+.quiz-foot button:active{
+    transform: scale(0.95);
+}
+#play-again{
+    display: none;
+}
+#result{
+    padding: .7rem 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+#result i{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+    background-color: var(--light-purple-color);
+    color: var(--light-color);
+}
+#back{
+    border: none;
+    border-radius: 0.5rem;
+    outline: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: .5rem 1rem;    
+    margin: 0 auto 0 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: block;
+    background-color: var(--grey-color);
+    color: var(--dark-color);
+    letter-spacing: 2px;
+    transition: var(--transition);
+    box-shadow: 0 4px 0 0 #bbbbbb;
+    float:right;
+    height:60px;
+
+}
+#back:hover{
+    background-color: #e6e6e6;
+    box-shadow: 0 4px 0 0 #a7a7a7;
+
+}
+
+
+
+
+@media(max-width: 678px){
+    .quiz-title{
+        font-size: 1.6rem;
+    }
+    .wrapper{
+        margin: 3rem 0;
+        width: 90%;
+        height: 90%;
+        padding: 1.5rem 1rem 3rem 1rem;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .quiz-foot button{
+        font-size: 1rem;
+    }
+}
+     </style>
+</head>
+<body class = "flex">
+    
+    <div class = "wrapper">
+        <div class = "quiz-container">
+            <div class = "quiz-head">
+                <h1 class = "quiz-title">PHYSICS PRATICE TEST <button type = "button" id = "back"><--BACK</button></h1>
+                
+                <div class = "quiz-score flex">
+                    <span id = "correct-score"></span>/<span id = "total-question"></span>
+                </div>
+            </div>
+            <div class = "quiz-body">
+                <h2 class = "quiz-question" id = "question"><!--What is the full form of HTTP? --></h2>
+                <ul class = "quiz-options">
+                    <!-- <li>1. Hyper text transfer package</li>
+                    <li>2. Hyper text transfer protocol</li>
+                    <li>3. Hyphenation text test program</li>
+                    <li>4. None of the above</li> -->
+                </ul>
+                <div id = "result">
+                </div>
+            </div>
+            <div class = "quiz-foot">
+                <button type = "button" id = "check-answer">Check Answer</button>
+                <button type = "button" id = "play-again">Play Again!</button>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+    const _question = document.getElementById('question');
+const _options = document.querySelector('.quiz-options');
+const _checkBtn = document.getElementById('check-answer');
+const _playAgainBtn = document.getElementById('play-again');
+const _result = document.getElementById('result');
+const _correctScore = document.getElementById('correct-score');
+const _totalQuestion = document.getElementById('total-question');
+
+let correctAnswer = "", correctScore = askedCount = 0, totalQuestion = 10;
+
+const questions = [
+    {
+        question: "What is the formula for calculating the force of gravity between two masses?",
+        options: ["F = G(m1*m2)/r²", "F = ma", "F = G(m1+m2)/r²", "F = k(q1*q2)/r²"],
+        correct_answer: "F = G(m1*m2)/r²"
+    },
+    {
+        question: "What is the speed of light in a vacuum?",
+        options: ["3 x 10^6 m/s", "3 x 10^8 m/s", "3 x 10^10 m/s", "3 x 10^12 m/s"],
+        correct_answer: "3 x 10^8 m/s"
+    },
+    {
+        question: "Who formulated the laws of motion?",
+        options: ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla"],
+        correct_answer: "Isaac Newton"
+    },
+    {
+        question: "What is the first law of thermodynamics?",
+        options: ["Energy cannot be created or destroyed", "Entropy of an isolated system always increases", "F = ma", "For every action, there is an equal and opposite reaction"],
+        correct_answer: "Energy cannot be created or destroyed"
+    },
+    {
+        question: "Which of the following is a vector quantity?",
+        options: ["Speed", "Distance", "Displacement", "Mass"],
+        correct_answer: "Displacement"
+    },
+    {
+        question: "What is the unit of electrical resistance?",
+        options: ["Volt", "Ohm", "Ampere", "Watt"],
+        correct_answer: "Ohm"
+    },
+    {
+        question: "In Einstein’s mass-energy equivalence equation (E=mc²), what does 'c' represent?",
+        options: ["Speed of light", "Speed of sound", "Gravitational constant", "Planck's constant"],
+        correct_answer: "Speed of light"
+    },
+    {
+        question: "What is the acceleration due to gravity on Earth?",
+        options: ["8.8 m/s²", "9.8 m/s²", "10.8 m/s²", "11.8 m/s²"],
+        correct_answer: "9.8 m/s²"
+    },
+    {
+        question: "What is the principle behind the operation of a transformer?",
+        options: ["Electromagnetic induction", "Electrostatic induction", "Ohm's Law", "Coulomb's Law"],
+        correct_answer: "Electromagnetic induction"
+    },
+    {
+        question: "What is the SI unit of power?",
+        options: ["Joule", "Newton", "Watt", "Pascal"],
+        correct_answer: "Watt"
+    },
+    {
+        question: "Which law states that the pressure of a gas is inversely proportional to its volume at a constant temperature?",
+        options: ["Boyle's Law", "Charles's Law", "Pascal's Law", "Avogadro's Law"],
+        correct_answer: "Boyle's Law"
+    },
+    {
+        question: "What type of lens is used to correct short-sightedness (myopia)?",
+        options: ["Concave lens", "Convex lens", "Cylindrical lens", "Bifocal lens"],
+        correct_answer: "Concave lens"
+    },
+    {
+        question: "What is the energy possessed by a body due to its motion called?",
+        options: ["Potential energy", "Kinetic energy", "Thermal energy", "Chemical energy"],
+        correct_answer: "Kinetic energy"
+    },
+    {
+        question: "What is the phenomenon of splitting of light into its component colors called?",
+        options: ["Reflection", "Refraction", "Diffraction", "Dispersion"],
+        correct_answer: "Dispersion"
+    },
+    {
+        question: "What is the term for the force that opposes the relative motion of two surfaces in contact?",
+        options: ["Tension", "Compression", "Friction", "Thrust"],
+        correct_answer: "Friction"
+    }
+];
+
+
+
+// load question manually
+function loadQuestion(){
+    if (askedCount < questions.length) {
+        const currentQuestion = questions[askedCount];
+        _result.innerHTML = "";
+        showQuestion(currentQuestion);
+    }
+}
+
+// display question and options
+function showQuestion(question){
+    _checkBtn.disabled = false;
+    correctAnswer = question.correct_answer;
+    let optionsList = question.options;
+    
+    _question.innerHTML = `${question.question}`;
+    _options.innerHTML = `
+        ${optionsList.map((option, index) => `
+            <li> ${index + 1}. <span>${option}</span> </li>
+        `).join('')}
+    `;
+    selectOption();
+}
+
+
+
+// event listeners
+function eventListeners(){
+    _checkBtn.addEventListener('click', checkAnswer);
+    _playAgainBtn.addEventListener('click', restartQuiz);
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+    loadQuestion();
+    eventListeners();
+    _totalQuestion.textContent = totalQuestion;
+    _correctScore.textContent = correctScore;
+});
+
+
+
+// options selection
+function selectOption(){
+    _options.querySelectorAll('li').forEach(function(option){
+        option.addEventListener('click', function(){
+            if(_options.querySelector('.selected')){
+                const activeOption = _options.querySelector('.selected');
+                activeOption.classList.remove('selected');
+            }
+            option.classList.add('selected');
+        });
+    });
+}
+
+// answer checking
+function checkAnswer(){
+    _checkBtn.disabled = true;
+    if(_options.querySelector('.selected')){
+        let selectedAnswer = _options.querySelector('.selected span').textContent;
+        if(selectedAnswer == HTMLDecode(correctAnswer)){
+            correctScore++;
+            _result.innerHTML = `<p><i class = "fas fa-check"></i>Correct Answer!</p>`;
+        } else {
+            _result.innerHTML = `<p><i class = "fas fa-times"></i>Incorrect Answer!</p> <small><b>Correct Answer: </b>${correctAnswer}</small>`;
+        }
+        checkCount();
+    } else {
+        _result.innerHTML = `<p><i class = "fas fa-question"></i>Please select an option!</p>`;
+        _checkBtn.disabled = false;
+    }
+}
+
+// to convert html entities into normal text of correct answer if there is any
+function HTMLDecode(textString) {
+    let doc = new DOMParser().parseFromString(textString, "text/html");
+    return doc.documentElement.textContent;
+}
+
+
+function checkCount(){
+    askedCount++;
+    setCount();
+    if(askedCount == totalQuestion){
+        setTimeout(function(){
+            console.log("");
+        }, 5000);
+
+
+        _result.innerHTML += `<p>Your score is ${correctScore}.</p>`;
+        _playAgainBtn.style.display = "block";
+        _checkBtn.style.display = "none";
+    } else {
+        setTimeout(function(){
+            loadQuestion();
+        }, 300);
+    }
+}
+
+function setCount(){
+    _totalQuestion.textContent = totalQuestion;
+    _correctScore.textContent = correctScore;
+}
+
+
+function restartQuiz(){
+    correctScore = askedCount = 0;
+    _playAgainBtn.style.display = "none";
+    _checkBtn.style.display = "block";
+    _checkBtn.disabled = false;
+    setCount();
+    loadQuestion();
+}
+</script>
+</body>
+</html>

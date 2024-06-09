@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StudPod</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header class="text-center py-5">
+        <div class="header-content">
+            <!-- Change the heading to "StudPod" -->
+            <h1 class="mb-4">StudPod</h1>
+            <nav>
+                <a href="index.html">Home</a>
+            </nav>
+        </div>
+    </header>
+    <div id="container" class="container">
+        <div class="row">
+            <div class="col align-items-center flex-col sign-up">
+                <div class="form-wrapper align-items-center">
+                    <div class="form sign-up">
+                        <form>
+                            <div class="input-group">
+                                <i class='bx bxs-user'></i>
+                                <input type="text" placeholder="Username" required>
+                            </div>
+                            <div class="input-group">
+                                <i class='bx bx-mail-send'></i>
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                            <div class="input-group">
+                                <i class='bx bxs-lock-alt'></i>
+                                <input type="password" id="psw2" placeholder="Password" required>
+                            </div>
+                            <div class="input-group">
+                                <i class='bx bxs-lock-alt'></i>
+                                <input type="password" id="psw1" placeholder="Confirm password" required>
+                            </div>
+                            <div style="text-align: left; padding-bottom: 10px;">
+                                <input type="checkbox" onclick="fun1();"> Show password
+                            </div>
+                            <button onclick="fun2()">
+                                Sign up
+                            </button>
+                        </form>
+                        <p>
+                            <span>Already have an account?</span>
+                            <b onclick="toggle()" class="pointer">Sign in here</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col align-items-center flex-col sign-in">
+                <div class="form-wrapper align-items-center">
+                    <div class="form sign-in">
+                        <form id="signInForm">
+                            <div class="input-group">
+                                <i class='bx bxs-user'></i>
+                                <input type="text" placeholder="Username" required>
+                            </div>
+                            <div class="input-group">
+                                <i class='bx bxs-lock-alt'></i>
+                                <input type="password" id="psw" placeholder="Password" required>
+                            </div>
+                            <div style="text-align: left; padding-bottom: 10px;">
+                                <input type="checkbox" onclick="fun();"> Show password
+                            </div>
+                            <!-- Modify button type to button -->
+                            <button type="button" onclick="signIn()">
+                                Sign in
+                            </button>
+                        </form>
+                        <p>
+                            <b>Forgot password?</b>
+                        </p>
+                        <p>
+                            <span>Don't have an account?</span>
+                            <b onclick="toggle()" class="pointer">Sign up here</b>
+                        </p>
+                    </div>
+                </div>
+                <div class="form-wrapper"></div>
+            </div>
+        </div>
+        <div class="row content-row">
+            <div class="col align-items-center flex-col">
+                <div class="text sign-in">
+                    <h2>Welcome</h2>
+                </div>
+                <div class="img sign-in"></div>
+            </div>
+            <div class="col align-items-center flex-col">
+                <div class="img sign-up"></div>
+                <div class="text sign-up">
+                    <h2>Join with us</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let container = document.getElementById('container');
+
+        toggle = () => {
+            container.classList.toggle('sign-in');
+            container.classList.toggle('sign-up');
+        }
+
+        setTimeout(() => {
+            container.classList.add('sign-in');
+        }, 200);
+
+        // Function to toggle password visibility
+        function fun() {
+            var a = document.getElementById("psw");
+            if (a.type === "password") {
+                a.type = "text";
+            } else {
+                a.type = "password";
+            }
+        }
+
+        function fun1() {
+            var a = document.getElementById("psw2");
+            if (a.type === "password") {
+                a.type = "text";
+            } else {
+                a.type = "password";
+            }
+            var b = document.getElementById("psw1");
+            if (b.type === "password") {
+                b.type = "text";
+            } else {
+                b.type = "password";
+            }
+        }
+
+        // Function to validate password match during sign-up
+        function fun2() {
+            var c = document.getElementById("psw1").value;
+            var d = document.getElementById("psw2").value;
+            if (c != d) {
+                alert("Password doesn't match");
+            }
+        }
+
+        // Function to handle sign-in
+        function signIn() {
+            // Redirect to subject portal page
+            window.location.href = "subjectPortal.html";
+        }
+    </script>
+</body>
+</html>

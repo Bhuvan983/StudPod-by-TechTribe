@@ -1,0 +1,309 @@
+.pod {
+    color: #ca2828;
+  }
+  .studpod {
+    margin: 0;
+    flex: 1;
+    position: relative;
+    font-size: inherit;
+    line-height: 91px;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-family: inherit;
+    display: inline-block;
+    max-width: 100%;
+  }
+  .tasty-grilled-chicken-black-pl-icon {
+    height: 657px;
+    width: 665px;
+    position: absolute;
+    margin: 0 !important;
+    right: -639px;
+    bottom: -601px;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .logo-container,
+  .slogan-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+  .slogan-container {
+    flex: 1;
+    position: relative;
+  }
+  .logo-container {
+    align-self: stretch;
+    padding: 0 0 0 var(--padding-6xs);
+    box-sizing: border-box;
+  }
+  .where-learning-meets {
+    margin: 0;
+    width: 529px;
+    position: relative;
+    font-size: 34px;
+    line-height: 34px;
+    font-weight: 500;
+    font-family: var(--font-outfit);
+    color: #5b5b5b;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+  }
+  .left-nav {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 167px;
+    max-width: 100%;
+  }
+  .login-sign-up {
+  
+      position: relative;
+      font-size: 25px;
+      font-weight: 500;
+      font-family: var(--font-outfit);
+      color: var(--color-white);
+      white-space: pre-wrap;
+      text-align: left;
+      cursor: pointer;
+  }
+  .auth-buttons {
+    border-radius: var(--br-58xl);
+    background-color: var(--color-darkred);
+    flex-direction: row;
+    padding: 38.5px 18px 40.5px;
+    white-space: nowrap;
+    z-index: 1;
+  }
+  .auth-buttons,
+  .auth-container,
+  .navbar,
+  .top-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .auth-container {
+    flex-direction: row;
+    padding: 0 var(--padding-6xs);
+    font-size: var(--font-size-19xl);
+    color: var(--color-white);
+    font-family: var(--font-outfit);
+  }
+  .navbar,
+  .top-container {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .navbar {
+    align-self: stretch;
+    gap: 140px;
+  }
+  .top-container {
+    width: 635px;
+    padding: 139px 0 0;
+    box-sizing: border-box;
+    min-width: 635px;
+  }
+  .union-icon {
+    position: absolute;
+    top: -95.7px;
+    left: 0;
+    border-radius: 71px;
+    width: 794.6px;
+    height: 1080.3px;
+  }
+  .sign-up {
+    text-decoration: none;
+    position: relative;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    font-family: var(--font-mulish);
+    color: var(--color-white);
+    text-align: left;
+    display: inline-block;
+    min-width: 68px;
+  }
+  .sign-up-wrapper {
+    cursor: pointer;
+    border: 0;
+    padding: 8px 28px;
+    background-color: var(--color-darkred);
+    position: absolute;
+    top: 34px;
+    left: 456px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    white-space: nowrap;
+    z-index: 1;
+  }
+  .sign-up-wrapper:hover {
+    background-color: #c43036;
+  }
+  .union-parent {
+    height: 984.6px;
+    flex: 1;
+    position: relative;
+    min-width: 443px;
+    max-width: 100%;
+  }
+  .main-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 39px;
+    max-width: 100%;
+    text-align: left;
+    font-size: 78px;
+    color: #000;
+    font-family: var(--font-mulish);
+  }
+  .login-sign-up1 {
+    position: relative;
+    font-weight: 500;
+  }
+  .login-sign-up-wrapper {
+    width: 300px;
+    height: 127px;
+    border-radius: var(--br-58xl);
+    background-color: var(--color-darkred);
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0 14px;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+  .access-comprehensive-study,
+  .at-studpod-we,
+  .join-or-create,
+  .span,
+  .span1 {
+    display: block;
+  }
+  .at-studpod-we-container {
+    margin: 0;
+    height: 428px;
+    flex: 1;
+    position: relative;
+    line-height: 34px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+  }
+  .collaboration-statement,
+  .web-design-creativezaiid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    text-align: left;
+    font-family: var(--font-outfit);
+  }
+  .collaboration-statement {
+    width: 1187px;
+    flex-direction: row;
+    padding: 0 38px;
+    max-width: 100%;
+    font-size: 30px;
+    color: #0e4f3f;
+  }
+  .web-design-creativezaiid {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    overflow: hidden;
+    flex-direction: column;
+    padding: 0 0 230px 85px;
+    gap: 65.4px;
+    line-height: normal;
+    letter-spacing: normal;
+    font-size: var(--font-size-19xl);
+    color: var(--color-white);
+  }
+  @media screen and (max-width: 1200px) {
+    .top-container {
+      flex: 1;
+    }
+    .main-container {
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .studpod {
+      font-size: 62px;
+      line-height: 73px;
+    }
+    .where-learning-meets {
+      font-size: 27px;
+      line-height: 27px;
+    }
+    .top-container {
+      min-width: 100%;
+    }
+    .at-studpod-we-container {
+      font-size: 24px;
+      line-height: 27px;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .left-nav {
+      gap: 83px;
+    }
+    .navbar {
+      gap: 70px;
+    }
+    .top-container {
+      padding-top: 90px;
+      box-sizing: border-box;
+    }
+    .union-parent {
+      min-width: 100%;
+    }
+    .main-container {
+      gap: 19px;
+    }
+    .web-design-creativezaiid {
+      gap: 33px;
+      padding-left: 42px;
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .studpod {
+      font-size: 47px;
+      line-height: 55px;
+    }
+    .where-learning-meets {
+      font-size: 20px;
+      line-height: 20px;
+    }
+    .left-nav {
+      gap: 42px;
+    }
+    .navbar {
+      gap: 35px;
+    }
+    .at-studpod-we-container {
+      font-size: var(--font-size-lg);
+      line-height: 20px;
+    }
+    .web-design-creativezaiid {
+      gap: 16px;
+      padding-left: 20px;
+      box-sizing: border-box;
+    }
+  }

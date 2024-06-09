@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology - StudPod</title>
+    <link rel="stylesheet" href="sub.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #151343;
+        }
+        .chat-window {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 400px; 
+            height: 600px;
+            border: 2px solid #b1040e;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 100; /* Ensure sidebar is on top */
+        }
+        .sidebar a {
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 12px;
+            color: white;
+            display: block;
+            margin: 20px 0;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+        .sidebar a img {
+            display: block;
+            margin: 0 auto 5px;
+            width: 24px;
+            height: 24px;
+        }
+        #content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: calc(100% - 80px); /* Adjust for sidebar */
+            padding: 0 40px; /* Padding for centering */
+            color: white;
+            text-align: center;
+            position: relative; /* Added for button positioning */
+        }
+        .study-together-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 900px; /* Max width for the content */
+        }
+        .study-together-container img {
+            max-width: 80%;
+            margin-top: 0;
+        }
+        .study-together-content {
+            margin-top: 5px;
+        }
+        .study-together-content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .study-together-content p {
+            font-size: 1em;
+            line-height: 1.2em;
+            padding: 10px 0;
+        }
+        .study-together-content button:hover {
+            background-color: #0a053a;
+            color: white;
+        }
+        .back-arrow {
+            margin-bottom: 20px;
+        }
+        .floating-button {
+            position: absolute;
+            top: 70%;
+            right: 100px; /* Adjust right padding as necessary */
+            transform: translateY(-100%);
+            transform: translateX(0%);
+            padding: 10px 20px;
+            font-size: 1.1em;
+            background-color: #fdfbffd3;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .floating-button:hover {
+            background-color: #0a053a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="javascript:history.back()">
+            <img class="back-arrow" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh3eMvxwvZvazX-cL8Z-0JJ-vfcNbn_v2_RQ&s" alt="Back Arrow">
+        </a>
+        <a href="https://adherer-io.web.app/#/">
+            <img src="https://cdn5.vectorstock.com/i/1000x1000/22/09/video-camera-the-white-color-icon-vector-15662209.jpg" alt="Study Room Icon">
+            Study Pod
+        </a>
+        <a href="bioquiz.html">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-fBdEWuVc02HhpJnxwc-Fopj0-4fnfzaDZw&s" alt="Quiz Icon">
+            Quiz
+        </a>
+        <a href="bioresource.html">
+            <img src="https://www.pikpng.com/pngl/b/182-1822166_human-resources-resource-icon-png-white-clipart.png" alt="Resources Icon">
+            Resources
+        </a>
+        
+    </div>
+    <div class="chat-window" id="chatWindow"></div>
+    <div id="content">
+        <div class="study-together-container">
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/students-studying-online-degree-program-4808843-4003056.png?f=webp" alt="Study Together">
+            <div class="study-together-content">
+                <h2>Study Biology Together</h2>
+                <p>Join Biology enthusiasts from all over the world in the study room to boost your productivity and find your study flow.</p>
+            </div>
+        </div>
+        <button class="floating-button" onclick="window.location.href='https://adherer-io.web.app/#/'">Join Study Pod</button>
+    </div>
+
+    <!-- Include VANTA.js and Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.cells.min.js"></script>
+    <script>
+        var setVanta = () => {
+            if (window.VANTA) {
+                window.VANTA.CELLS({
+                    el: "body",
+                    mouseControls: true,
+                    touchControls: true,
+                    gyroControls: false,
+                    minHeight: 200.00,
+                    minWidth: 200.00,
+                    scale: 1.00
+                })
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", setVanta);
+    </script>
+    <script>
+        function toggleChat() {
+            var chatWindow = document.getElementById('chatWindow');
+            if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+                chatWindow.style.display = 'block';
+            } else {
+                chatWindow.style.display = 'none';
+            }
+        }
+    </script>
+    <!-- Add Font Awesome CDN link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "aflVho8UYL1oSj1v9B6Ty",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="aflVho8UYL1oSj1v9B6Ty"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+</body>
+</html>

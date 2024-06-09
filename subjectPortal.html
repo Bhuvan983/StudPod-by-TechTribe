@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes hanging {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(5deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+      .hanging span {
+        display: inline-block;
+        animation: hanging 2s infinite;
+        transform-origin: top center;
+      }
+      .hanging span:nth-child(odd) {
+        animation-delay: 0s;
+      }
+      .hanging span:nth-child(even) {
+        animation-delay: 1s;
+      }
+      #head{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: rgb(252, 131, 3);
+        background-color: black;
+        width:100%;
+        text-align: center;
+        border: 3px solid white;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+      .home{
+        background-color: chartreuse;
+        color: black;
+        border: 3px solid rgb(255, 141, 10);
+        border-radius: 3px;
+        font-family: 'Times New Roman', Times, serif;
+        float: right;
+        font-size: small;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        border-top-left-radius: 12px;
+        box-shadow: 0px 0px 4px;
+      }
+    
+    </style>
+  </head>
+  <body class="bg-zinc-800 text-white min-h-screen flex flex-col items-center" style="background-image: url('https://media.istockphoto.com/vectors/school-elements-seamless-pattern-vector-background-with-school-and-vector-id1156440056?k=20&m=1156440056&s=612x612&w=0&h=1wYmm0svchajK9RW_wMsAavbartyvwWbHnE_Qf--piw=');">
+    <h1 class="text-white text-2xl md:text-3xl lg:text-4xl mb-8 hanging" id="head">
+      <span>S</span><span>t</span><span>u</span><span>d</span><span>P</span><span>o</span><span>d</span>
+      <button class="home" onclick="window.location.href='index.html'">HOME</button>
+    </h1>
+    
+    <div class="flex-grow flex items-center justify-center p-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" style="width:150%;" >
+        <button class="bg-zinc-700 rounded-lg overflow-hidden shadow-lg" onclick="window.location.href='Phy.html'">
+          <img src="https://media4.giphy.com/media/wJOPCwDaiZm5yhauKr/giphy.gif?cid=6c09b952g3xp8pjmcbx8ecuiqn6qbwdl3q451vp275yzf1n3&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Mobile Phone" class="w-full h-36 object-cover">
+          <div class="p-4 text-center">
+            <h3 class="text-white text-lg font-semibold">PHYSICS</h3>
+            <p class="text-teal-400 text-xl font-bold" style="border: 2px solid #04AA6D;
+            border-radius: 3px;">CLICK HERE</p>
+            <p> </p>
+          </div>
+        </button>
+        <button class="bg-zinc-700 rounded-lg overflow-hidden shadow-lg" onclick="window.location.href='chem.html'">
+          <img src="https://cdn.dribbble.com/users/228367/screenshots/4603754/chemistryset_dribbble.gif" alt="Laptop" class="w-full h-36 object-cover" style="border: 2px solid #04AA6D;
+          border-radius: 3px;">
+          <div class="p-4 text-center">
+            <h3 class="text-white text-lg font-semibold">CHEMISTRY</h3>
+            <p class="text-teal-400 text-xl font-bold" style="border: 2px solid #04AA6D;
+            border-radius: 3px;">CLICK HERE</p>
+            <p> </p>
+          </div>
+        </button>
+        <button class="bg-zinc-700 rounded-lg overflow-hidden shadow-lg" onclick="window.location.href='code.html'">
+          <img src="https://raw.githubusercontent.com/anikakash/anikakash/main/assets/focus-animation.gif?raw=true" alt="Headphone" class="w-full h-36 object-cover" style="border: 2px solid #04AA6D;
+          border-radius: 3px;">
+          <div class="p-4 text-center">
+            <h3 class="text-white text-lg font-semibold">CODING</h3>
+            <p class="text-teal-400 text-xl font-bold" style="border: 2px solid #04AA6D;
+            border-radius: 3px;">CLICK HERE</p>
+            <p> </p>
+          </div>
+        </button>
+        <button class="bg-zinc-700 rounded-lg overflow-hidden shadow-lg" onclick="window.location.href='bio.html'">
+          <img src="https://newswithoutpolitics.com/wp-content/uploads/2022/03/DNA.gif" alt="Speaker" class="w-full h-36 object-cover" style="border: 2px solid #04AA6D;
+          border-radius: 3px;">
+          <div class="p-4 text-center">
+            <h3 class="text-white text-lg font-semibold">BIOLOGY</h3>
+            <p class="text-teal-400 text-xl font-bold" style="border: 2px solid #04AA6D;
+            border-radius: 3px;">CLICK HERE</p>
+            <p> </p>
+          </div>
+        </button>
+        <button class="bg-zinc-700 rounded-lg overflow-hidden shadow-lg"  onclick="window.location.href='cal.html'">
+          <img src="https://media0.giphy.com/media/zPbnEgxsPJOJSD3qfr/giphy.gif?cid=6c09b952nek1ejaniaig1693o4oxre3exogn9j9p1v6qtfj7&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Smartwatch" class="w-full h-36 object-cover" style="border: 2px solid #04AA6D;
+          border-radius: 3px;">
+          <div class="p-4 text-center">
+            <h3 class="text-white text-lg font-semibold">MATHS</h3>
+            <p class="text-teal-400 text-xl font-bold" style="border: 2px solid #04AA6D;
+            border-radius: 3px;">CLICK HERE</p>
+            <p> </p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

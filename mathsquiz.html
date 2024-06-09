@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATHS PRATICE TEST</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel = "stylesheet" href = "quiz.css"> -->
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --light-purple-color: #47edc7;
+    --light-color: rgb(255,255,255,0.8);
+    --dark-color: #000;
+    --grey-color: #02edfe;
+    --transition: all 300ms ease-in-out;
+    color: #000;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    width:100%;
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-color);
+    background: var(--grey-color);
+    background-image: url('https://cdn.dribbble.com/users/267530/screenshots/3140358/media/292e06fdc9ecbda18de3c6b1b12d47b1.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wrapper{
+    background: var(--light-color);
+    padding: 1.5rem 4rem 3rem 4rem;
+    width: 60%;
+    height: 800%;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 10%), 0 1px 3px rgb(0 0 0 / 10%);
+  
+}
+.quiz-title{
+    text-align: center;
+    font-size: 2rem;
+}
+.quiz-score{
+    text-align: right;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border: 5px solid var(--grey-color);
+    font-weight: bold;
+    width: 100px;
+    height: 50px;
+    margin: .5rem auto 1rem auto;
+    color: var(--light-purple-color);
+}
+.quiz-question{
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+}
+.quiz-question .category{
+    font-size: 0.9rem;
+    font-weight: 500;
+    background-color: var(--light-purple-color);
+    color: var(--light-color);
+    padding: .2rem .4rem;
+    border-radius: .2rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+.quiz-options{
+    list-style-type: none;
+    margin: 1rem 0;
+}
+.quiz-options li{
+    border-radius: 0.5rem;
+    font-weight: 600;
+    margin: .7rem 0;
+    padding: .4rem 1.2rem;
+    cursor: pointer;
+    border: 3px solid var(--light-purple-color);
+    background-color: var(--light-purple-color);
+    color: var(--light-color);
+    box-shadow: 0 4px 0 0 #8213f8;
+    transition: var(--transition);
+}
+.quiz-options li:hover{
+    background-color: var(--grey-color);
+    color: var(--dark-color);
+    border-color: var(--grey-color);
+    box-shadow: 0 4px 0 0 #bbbbbb;
+}
+.quiz-options li:active{
+    transform: scale(0.97);
+}
+/* js related */
+.selected{
+    background-color: var(--grey-color)!important;
+    color: var(--dark-color)!important;
+    border-color: var(--grey-color)!important;
+    box-shadow: 0 4px 0 0 #bbbbbb!important;
+}
+.quiz-foot button{
+    border: none;
+    border-radius: 0.5rem;
+    outline: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: .5rem 1rem;    
+    margin: 0 auto 0 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: block;
+    background-color: var(--grey-color);
+    color: var(--dark-color);
+    letter-spacing: 2px;
+    transition: var(--transition);
+    box-shadow: 0 4px 0 0 #bbbbbb;
+}
+.quiz-foot button:hover{
+    background-color: #e6e6e6;
+    box-shadow: 0 4px 0 0 #a7a7a7;
+}
+.quiz-foot button:active{
+    transform: scale(0.95);
+}
+#play-again{
+    display: none;
+}
+#result{
+    padding: .7rem 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+#result i{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+    background-color: var(--light-purple-color);
+    color: var(--light-color);
+}
+#back{
+    border: none;
+    border-radius: 0.5rem;
+    outline: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: .5rem 1rem;    
+    margin: 0 auto 0 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: block;
+    background-color: var(--grey-color);
+    color: var(--dark-color);
+    letter-spacing: 2px;
+    transition: var(--transition);
+    box-shadow: 0 4px 0 0 #bbbbbb;
+    float:right;
+    height:60px;
+
+}
+#back:hover{
+    background-color: #e6e6e6;
+    box-shadow: 0 4px 0 0 #a7a7a7;
+
+}
+
+
+
+
+@media(max-width: 678px){
+    .quiz-title{
+        font-size: 1.6rem;
+    }
+    .wrapper{
+        margin: 3rem 0;
+        width: 90%;
+        height: 90%;
+        padding: 1.5rem 1rem 3rem 1rem;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .quiz-foot button{
+        font-size: 1rem;
+    }
+}
+     </style>
+</head>
+<body class = "flex">
+    
+    <div class = "wrapper">
+        <div class = "quiz-container">
+            <div class = "quiz-head">
+                <h1 class = "quiz-title">MATHS PRATICE TEST <button type = "button" id = "back"><--BACK</button></h1>
+                
+                <div class = "quiz-score flex">
+                    <span id = "correct-score"></span>/<span id = "total-question"></span>
+                </div>
+            </div>
+            <div class = "quiz-body">
+                <h2 class = "quiz-question" id = "question"><!--What is the full form of HTTP? --></h2>
+                <ul class = "quiz-options">
+                    <!-- <li>1. Hyper text transfer package</li>
+                    <li>2. Hyper text transfer protocol</li>
+                    <li>3. Hyphenation text test program</li>
+                    <li>4. None of the above</li> -->
+                </ul>
+                <div id = "result">
+                </div>
+            </div>
+            <div class = "quiz-foot">
+                <button type = "button" id = "check-answer">Check Answer</button>
+                <button type = "button" id = "play-again">Play Again!</button>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+    const _question = document.getElementById('question');
+const _options = document.querySelector('.quiz-options');
+const _checkBtn = document.getElementById('check-answer');
+const _playAgainBtn = document.getElementById('play-again');
+const _result = document.getElementById('result');
+const _correctScore = document.getElementById('correct-score');
+const _totalQuestion = document.getElementById('total-question');
+
+let correctAnswer = "", correctScore = askedCount = 0, totalQuestion = 10;
+
+const questions = [
+    {
+        question: "What is the derivative of \( e^{2x} \)?",
+        options: ["\( 2e^{2x} \)", "\( e^{2x} \)", "\( \frac{1}{2}e^{2x} \)", "\( e^x \)"],
+        correct_answer: "\( 2e^{2x} \)"
+    },
+    {
+        question: "Evaluate the integral \( \int x \sin(x) \, dx \).",
+        options: ["\( -x \cos(x) + \sin(x) + C \)", "\( x \cos(x) - \sin(x) + C \)", "\( -x \sin(x) + \cos(x) + C \)", "\( x \sin(x) - \cos(x) + C \)"],
+        correct_answer: "\( -x \cos(x) + \sin(x) + C \)"
+    },
+    {
+        question: "What is the probability of drawing an ace from a standard deck of 52 cards?",
+        options: ["\( \frac{1}{13} \)", "\( \frac{1}{4} \)", "\( \frac{1}{52} \)", "\( \frac{4}{52} \)"],
+        correct_answer: "\( \frac{1}{13} \)"
+    },
+    {
+        question: "What is the derivative of \( \ln(x^2 + 1) \)?",
+        options: ["\( \frac{2x}{x^2 + 1} \)", "\( \frac{1}{x^2 + 1} \)", "\( \frac{x}{x^2 + 1} \)", "\( \frac{2}{x^2 + 1} \)"],
+        correct_answer: "\( \frac{2x}{x^2 + 1} \)"
+    },
+    {
+        question: "Solve the integral \( \int \frac{1}{x^2 + 1} \, dx \).",
+        options: ["\( \tan^{-1}(x) + C \)", "\( \ln|x^2 + 1| + C \)", "\( x \cdot \tan^{-1}(x) + C \)", "\( \ln|x + 1| + C \)"],
+        correct_answer: "\( \tan^{-1}(x) + C \)"
+    },
+    {
+        question: "In a normal distribution, approximately what percentage of data lies within one standard deviation of the mean?",
+        options: ["68%", "75%", "95%", "99%"],
+        correct_answer: "68%"
+    },
+    {
+        question: "What is the equation of the tangent line to the curve \( y = x^2 + 2x \) at the point (1, 3)?",
+        options: ["\( y = 2x + 1 \)", "\( y = 4x - 1 \)", "\( y = 2x + 3 \)", "\( y = 4x + 1 \)"],
+        correct_answer: "\( y = 4x - 1 \)"
+    },
+    {
+        question: "Find the second derivative of \( y = 3x^3 + 2x^2 - x + 4 \).",
+        options: ["\( 18x + 4 \)", "\( 18x^2 + 4x \)", "\( 6x + 2 \)", "\( 18x^2 + 4 \)"],
+        correct_answer: "\( 18x + 4 \)"
+    },
+    {
+        question: "Calculate the area under the curve \( y = x^2 \) from \( x = 0 \) to \( x = 2 \).",
+        options: ["\( \frac{4}{3} \)", "\( 4 \)", "\( \frac{8}{3} \)", "\( 2 \)"],
+        correct_answer: "\( \frac{8}{3} \)"
+    },
+    {
+        question: "If \( P(A) = 0.6 \) and \( P(B) = 0.7 \), and \( A \) and \( B \) are independent, what is \( P(A \cap B) \)?",
+        options: ["0.42", "0.3", "0.9", "0.13"],
+        correct_answer: "0.42"
+    },
+    {
+        question: "Find the inflection point of the function \( f(x) = x^3 - 3x^2 + 4 \).",
+        options: ["(1, 2)", "(2, 0)", "(1, 2)", "(3, 0)"],
+        correct_answer: "(1, 2)"
+    },
+    {
+        question: "What is the solution to the differential equation \( \frac{dy}{dx} = y \) given \( y(0) = 1 \)?",
+        options: ["\( y = e^x \)", "\( y = e^{-x} \)", "\( y = e^{x+1} \)", "\( y = e^{-x+1} \)"],
+        correct_answer: "\( y = e^x \)"
+    },
+    {
+        question: "What is the value of the definite integral \( \int_{0}^{1} (2x + 3) \, dx \)?",
+        options: ["2.5", "3.5", "4.5", "5.5"],
+        correct_answer: "4.5"
+    },
+    {
+        question: "Find the local maxima of the function \( f(x) = -x^2 + 4x - 3 \).",
+        options: ["(2, 1)", "(2, 3)", "(1, 2)", "(0, -3)"],
+        correct_answer: "(2, 1)"
+    },
+    {
+        question: "What is the expected value of a fair six-sided die roll?",
+        options: ["3", "3.5", "4", "4.5"],
+        correct_answer: "3.5"
+    }
+];
+
+
+
+
+// load question manually
+function loadQuestion(){
+    if (askedCount < questions.length) {
+        const currentQuestion = questions[askedCount];
+        _result.innerHTML = "";
+        showQuestion(currentQuestion);
+    }
+}
+
+// display question and options
+function showQuestion(question){
+    _checkBtn.disabled = false;
+    correctAnswer = question.correct_answer;
+    let optionsList = question.options;
+    
+    _question.innerHTML = `${question.question}`;
+    _options.innerHTML = `
+        ${optionsList.map((option, index) => `
+            <li> ${index + 1}. <span>${option}</span> </li>
+        `).join('')}
+    `;
+    selectOption();
+}
+
+
+
+// event listeners
+function eventListeners(){
+    _checkBtn.addEventListener('click', checkAnswer);
+    _playAgainBtn.addEventListener('click', restartQuiz);
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+    loadQuestion();
+    eventListeners();
+    _totalQuestion.textContent = totalQuestion;
+    _correctScore.textContent = correctScore;
+});
+
+
+
+// options selection
+function selectOption(){
+    _options.querySelectorAll('li').forEach(function(option){
+        option.addEventListener('click', function(){
+            if(_options.querySelector('.selected')){
+                const activeOption = _options.querySelector('.selected');
+                activeOption.classList.remove('selected');
+            }
+            option.classList.add('selected');
+        });
+    });
+}
+
+// answer checking
+function checkAnswer(){
+    _checkBtn.disabled = true;
+    if(_options.querySelector('.selected')){
+        let selectedAnswer = _options.querySelector('.selected span').textContent;
+        if(selectedAnswer == HTMLDecode(correctAnswer)){
+            correctScore++;
+            _result.innerHTML = `<p><i class = "fas fa-check"></i>Correct Answer!</p>`;
+        } else {
+            _result.innerHTML = `<p><i class = "fas fa-times"></i>Incorrect Answer!</p> <small><b>Correct Answer: </b>${correctAnswer}</small>`;
+        }
+        checkCount();
+    } else {
+        _result.innerHTML = `<p><i class = "fas fa-question"></i>Please select an option!</p>`;
+        _checkBtn.disabled = false;
+    }
+}
+
+// to convert html entities into normal text of correct answer if there is any
+function HTMLDecode(textString) {
+    let doc = new DOMParser().parseFromString(textString, "text/html");
+    return doc.documentElement.textContent;
+}
+
+
+function checkCount(){
+    askedCount++;
+    setCount();
+    if(askedCount == totalQuestion){
+        setTimeout(function(){
+            console.log("");
+        }, 5000);
+
+
+        _result.innerHTML += `<p>Your score is ${correctScore}.</p>`;
+        _playAgainBtn.style.display = "block";
+        _checkBtn.style.display = "none";
+    } else {
+        setTimeout(function(){
+            loadQuestion();
+        }, 300);
+    }
+}
+
+function setCount(){
+    _totalQuestion.textContent = totalQuestion;
+    _correctScore.textContent = correctScore;
+}
+
+
+function restartQuiz(){
+    correctScore = askedCount = 0;
+    _playAgainBtn.style.display = "none";
+    _checkBtn.style.display = "block";
+    _checkBtn.disabled = false;
+    setCount();
+    loadQuestion();
+}
+</script>
+</body>
+</html>
