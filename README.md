@@ -8,7 +8,7 @@ Aparna Akondi - VU21CSEN0100340<br>
 Shreya Dhannarapu- VU21CSEN0100144
 </b><br>
 
-<h2>We have deployed the solution of our hackathon at:
+<h2>We have deployed the solution of our hackathon at:https://bhuvan983.github.io/StudPod-by-TechTribe/</h2>
 
 <h3>Name of the project: StudPod</h3>
 
