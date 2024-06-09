@@ -1,5 +1,5 @@
 # StudPod by Tech-Tribe
-This is the repository for the initial screening round of Hackathon. <br>
+This is the repository for the final screening round of Hackathon. <br>
 <b>Our team (Tech-Tribe) members are:<br>
 Nakka Bhuvan Lohit Dev - VU21CSEN0100463<br>
 Varri Ram Narisimha Tharakeswar - VU21CSEN0100414<br>
